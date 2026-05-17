@@ -54,12 +54,17 @@ def generate_email():
     You must return a clean email with proper formatting and no extra text and symbols.
     """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        email_text = response.text
+    except Exception as e:
+        # Log the exception if needed (omitted for brevity)
+        return jsonify({"error": "Failed to generate email. Please check your API key and try again."}), 500
 
-    return jsonify({"email": response.text})
+    return jsonify({"email": email_text})
 
 
 if __name__ == "__main__":

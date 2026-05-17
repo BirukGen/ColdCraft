@@ -4,14 +4,16 @@
 <head>
     <title>ColdCraft</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h3>ColdCraft</h3>
+                <a href="/">
+                    <h3>ColdCraft</h3>
+                </a>
             </div>
             <div class="nav-links">
                 <a href="/" class="nav-link active">Home</a>
@@ -30,6 +32,10 @@
                 <p>ColdCraft helps you craft professional cold emails that stand out. Whether you're
                     reaching out to potential employers, research collaborators, or industry professionals, we'll help
                     you create compelling messages that get responses.</p>
+            </div>
+            <div class="ai-warning"
+                style="margin-top:20px; font-size:18px; color:#dc2626; text-align:center; padding:10px 0;">
+                <strong>Warning:</strong> The emails are generated using AI and should be reviewed for accuracy.
             </div>
 
             <div class="cta-buttons">
